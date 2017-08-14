@@ -180,6 +180,7 @@
             this.MaximizeBox = false;
             this.Name = "BMI_CALCULATOR";
             this.Text = "bmi calculator";
+            this.Load += new System.EventHandler(this.BMI_CALCULATOR_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
