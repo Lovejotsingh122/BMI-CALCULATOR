@@ -31,12 +31,15 @@
             this.BMI = new System.Windows.Forms.Label();
             this.MYWEIGHT = new System.Windows.Forms.Label();
             this.MYHEIGHT = new System.Windows.Forms.Label();
-            this.CALCULATE = new System.Windows.Forms.Button();
-            this.RAD_METRIC = new System.Windows.Forms.RadioButton();
-            this.RAD_IMPERIAL = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CalculateBMI = new System.Windows.Forms.Button();
+            this._METRIC = new System.Windows.Forms.RadioButton();
+            this._IMPERIAL = new System.Windows.Forms.RadioButton();
+            this.Height = new System.Windows.Forms.TextBox();
+            this.Weight = new System.Windows.Forms.TextBox();
+            this.BMI_Value = new System.Windows.Forms.TextBox();
+            this.cm = new System.Windows.Forms.Label();
+            this.kg = new System.Windows.Forms.Label();
+            this.Reset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BMI
@@ -52,7 +55,7 @@
             // MYWEIGHT
             // 
             this.MYWEIGHT.AutoSize = true;
-            this.MYWEIGHT.Location = new System.Drawing.Point(12, 208);
+            this.MYWEIGHT.Location = new System.Drawing.Point(-2, 158);
             this.MYWEIGHT.Name = "MYWEIGHT";
             this.MYWEIGHT.Size = new System.Drawing.Size(170, 31);
             this.MYWEIGHT.TabIndex = 2;
@@ -61,84 +64,121 @@
             // MYHEIGHT
             // 
             this.MYHEIGHT.AutoSize = true;
-            this.MYHEIGHT.Location = new System.Drawing.Point(12, 141);
+            this.MYHEIGHT.Location = new System.Drawing.Point(-2, 114);
             this.MYHEIGHT.Name = "MYHEIGHT";
             this.MYHEIGHT.Size = new System.Drawing.Size(165, 31);
             this.MYHEIGHT.TabIndex = 3;
             this.MYHEIGHT.Text = "MY HEIGHT";
             // 
-            // CALCULATE
+            // CalculateBMI
             // 
-            this.CALCULATE.Location = new System.Drawing.Point(65, 272);
-            this.CALCULATE.Name = "CALCULATE";
-            this.CALCULATE.Size = new System.Drawing.Size(184, 46);
-            this.CALCULATE.TabIndex = 4;
-            this.CALCULATE.Text = "CALCULATE";
-            this.CALCULATE.UseVisualStyleBackColor = true;
-            this.CALCULATE.Click += new System.EventHandler(this.button1_Click);
+            this.CalculateBMI.Location = new System.Drawing.Point(62, 202);
+            this.CalculateBMI.Name = "CalculateBMI";
+            this.CalculateBMI.Size = new System.Drawing.Size(184, 46);
+            this.CalculateBMI.TabIndex = 4;
+            this.CalculateBMI.Text = "CALCULATE";
+            this.CalculateBMI.UseVisualStyleBackColor = true;
+            this.CalculateBMI.Click += new System.EventHandler(this.button1_Click);
             // 
-            // RAD_METRIC
+            // _METRIC
             // 
-            this.RAD_METRIC.AutoSize = true;
-            this.RAD_METRIC.Location = new System.Drawing.Point(4, 66);
-            this.RAD_METRIC.Name = "RAD_METRIC";
-            this.RAD_METRIC.Size = new System.Drawing.Size(137, 35);
-            this.RAD_METRIC.TabIndex = 5;
-            this.RAD_METRIC.TabStop = true;
-            this.RAD_METRIC.Text = "METRIC";
-            this.RAD_METRIC.UseVisualStyleBackColor = true;
-            this.RAD_METRIC.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this._METRIC.AutoSize = true;
+            this._METRIC.Location = new System.Drawing.Point(4, 66);
+            this._METRIC.Name = "_METRIC";
+            this._METRIC.Size = new System.Drawing.Size(137, 35);
+            this._METRIC.TabIndex = 5;
+            this._METRIC.TabStop = true;
+            this._METRIC.Text = "METRIC";
+            this._METRIC.UseVisualStyleBackColor = true;
+            this._METRIC.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // RAD_IMPERIAL
+            // _IMPERIAL
             // 
-            this.RAD_IMPERIAL.AutoSize = true;
-            this.RAD_IMPERIAL.Location = new System.Drawing.Point(147, 66);
-            this.RAD_IMPERIAL.Name = "RAD_IMPERIAL";
-            this.RAD_IMPERIAL.Size = new System.Drawing.Size(159, 35);
-            this.RAD_IMPERIAL.TabIndex = 6;
-            this.RAD_IMPERIAL.TabStop = true;
-            this.RAD_IMPERIAL.Text = "IMPERIAL";
-            this.RAD_IMPERIAL.UseVisualStyleBackColor = true;
+            this._IMPERIAL.AutoSize = true;
+            this._IMPERIAL.Location = new System.Drawing.Point(147, 66);
+            this._IMPERIAL.Name = "_IMPERIAL";
+            this._IMPERIAL.Size = new System.Drawing.Size(159, 35);
+            this._IMPERIAL.TabIndex = 6;
+            this._IMPERIAL.TabStop = true;
+            this._IMPERIAL.Text = "IMPERIAL";
+            this._IMPERIAL.UseVisualStyleBackColor = true;
+            this._IMPERIAL.CheckedChanged += new System.EventHandler(this._IMPERIAL_CheckedChanged);
             // 
-            // textBox1
+            // Height
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 7;
+            this.Height.Location = new System.Drawing.Point(169, 117);
+            this.Height.Name = "Height";
+            this.Height.Size = new System.Drawing.Size(64, 38);
+            this.Height.TabIndex = 7;
+            this.Height.TextChanged += new System.EventHandler(this.Height_TextChanged);
             // 
-            // textBox2
+            // Weight
             // 
-            this.textBox2.Location = new System.Drawing.Point(183, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 38);
-            this.textBox2.TabIndex = 8;
+            this.Weight.Location = new System.Drawing.Point(169, 158);
+            this.Weight.Name = "Weight";
+            this.Weight.Size = new System.Drawing.Size(64, 38);
+            this.Weight.TabIndex = 8;
+            this.Weight.TextChanged += new System.EventHandler(this.Weight_TextChanged);
             // 
-            // textBox3
+            // BMI_Value
             // 
-            this.textBox3.Location = new System.Drawing.Point(18, 324);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(274, 38);
-            this.textBox3.TabIndex = 9;
+            this.BMI_Value.Location = new System.Drawing.Point(18, 254);
+            this.BMI_Value.Name = "BMI_Value";
+            this.BMI_Value.Size = new System.Drawing.Size(274, 38);
+            this.BMI_Value.TabIndex = 9;
+            this.BMI_Value.TextChanged += new System.EventHandler(this.BMI_Value_TextChanged);
             // 
-            // Form1
+            // cm
+            // 
+            this.cm.AutoSize = true;
+            this.cm.Location = new System.Drawing.Point(239, 124);
+            this.cm.Name = "cm";
+            this.cm.Size = new System.Drawing.Size(66, 31);
+            this.cm.TabIndex = 10;
+            this.cm.Text = "Inch";
+            this.cm.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // kg
+            // 
+            this.kg.AutoSize = true;
+            this.kg.Location = new System.Drawing.Point(239, 158);
+            this.kg.Name = "kg";
+            this.kg.Size = new System.Drawing.Size(49, 31);
+            this.kg.TabIndex = 11;
+            this.kg.Text = "lbs";
+            this.kg.Click += new System.EventHandler(this.kg_Click);
+            // 
+            // Reset
+            // 
+            this.Reset.Location = new System.Drawing.Point(65, 299);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(184, 46);
+            this.Reset.TabIndex = 12;
+            this.Reset.Text = "Clear";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // BMI_CALCULATOR
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(304, 381);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.RAD_IMPERIAL);
-            this.Controls.Add(this.RAD_METRIC);
-            this.Controls.Add(this.CALCULATE);
+            this.ClientSize = new System.Drawing.Size(304, 441);
+            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.kg);
+            this.Controls.Add(this.cm);
+            this.Controls.Add(this.BMI_Value);
+            this.Controls.Add(this.Weight);
+            this.Controls.Add(this.Height);
+            this.Controls.Add(this._IMPERIAL);
+            this.Controls.Add(this._METRIC);
+            this.Controls.Add(this.CalculateBMI);
             this.Controls.Add(this.MYHEIGHT);
             this.Controls.Add(this.MYWEIGHT);
             this.Controls.Add(this.BMI);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "BMI_CALCULATOR";
             this.Text = "bmi calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,12 +190,15 @@
         private System.Windows.Forms.Label BMI;
         private System.Windows.Forms.Label MYWEIGHT;
         private System.Windows.Forms.Label MYHEIGHT;
-        private System.Windows.Forms.Button CALCULATE;
-        private System.Windows.Forms.RadioButton RAD_METRIC;
-        private System.Windows.Forms.RadioButton RAD_IMPERIAL;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button CalculateBMI;
+        private System.Windows.Forms.RadioButton _METRIC;
+        private System.Windows.Forms.RadioButton _IMPERIAL;
+        private System.Windows.Forms.TextBox Height;
+        private System.Windows.Forms.TextBox Weight;
+        private System.Windows.Forms.TextBox BMI_Value;
+        private System.Windows.Forms.Label cm;
+        private System.Windows.Forms.Label kg;
+        private System.Windows.Forms.Button Reset;
     }
 }
 
