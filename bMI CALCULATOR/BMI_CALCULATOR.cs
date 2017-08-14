@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-/*
+/*GITHUB LINK:https://github.com/Lovejotsingh122/BMI-CALCULATOR
  *Name: Lovejot Singh
  *StudentId:300928227
  *Desc: BMI CALCULATOR

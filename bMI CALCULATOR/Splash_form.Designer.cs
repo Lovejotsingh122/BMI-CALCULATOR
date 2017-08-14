@@ -58,7 +58,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(356, 441);
+            this.ClientSize = new System.Drawing.Size(328, 441);
             this.Controls.Add(this.textBox1);
             this.Name = "Splash_form";
             this.Text = " ";

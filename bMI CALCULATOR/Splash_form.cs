@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*Name:Lovejot Singh
+
+/*GITHUB LINK:https://github.com/Lovejotsingh122/BMI-CALCULATOR
+ * Name:Lovejot Singh
  * Student Number: 300928227
  * DATE:14 AUGUST 2017
  * DESC: creating splash form class
